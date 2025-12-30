@@ -176,8 +176,6 @@ journalctl -u tempo -f
 
 <img width="956" height="248" alt="image" src="https://github.com/user-attachments/assets/c40b902e-57e9-4510-86fd-081f84ee5062" />
 
- - LOG ANALİZİ (SATIR SATIR)
-
 - Sevgiler.
 - RPCdot Ekibi.
 
