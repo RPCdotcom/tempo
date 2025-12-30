@@ -30,23 +30,40 @@ sudo apt update -y && sudo apt upgrade -y
 sudo apt install htop ca-certificates zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev tmux iptables curl nvme-cli git wget make jq libleveldb-dev build-essential pkg-config ncdu tar clang bsdmainutils lsb-release libssl-dev libreadline-dev libffi-dev jq gcc screen file nano btop unzip lz4 -y
 ```
 
-## 3. Tempo'yu İndirelim ; 
+## 3. Rust ; 
 
 ```bash
-curl -L https://tempo.xyz/install | bash
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ```
 
-<img width="543" height="502" alt="image" src="https://github.com/user-attachments/assets/4a0c2aa9-c3b0-4522-8557-a0b1545768a3" />
+<img width="640" height="795" alt="image" src="https://github.com/user-attachments/assets/f2532bba-abf0-4b24-83b1-e92501bb2ef6" />
+
+
+- 1 Enter.
 
 - Source ; 
 ```bash
-source /root/.bashrc
+source $HOME/.cargo/env
 ```
 
-- Versiyon Kontrolü ; 
+<img width="480" height="221" alt="image" src="https://github.com/user-attachments/assets/690af1ac-df78-4913-9dd6-4a9b3ce0f0a1" />
+
+
+- Version Kontrol ; 
+```bash
+rustc --version
+cargo --version
+```
+
+<img width="336" height="86" alt="image" src="https://github.com/user-attachments/assets/f2b616ff-ec21-4e93-acd7-a52225c5d44c" />
+
+
+## 4. Tempo'yu İndirelim ; 
 
 ```bash
-tempo --version
+cargo install --git https://github.com/tempoxyz/tempo.git tempo --root /usr/local
 ```
-<img width="361" height="127" alt="image" src="https://github.com/user-attachments/assets/87a3351f-3f89-4bd8-ab2c-7e7c4857aa0a" />
+
+<img width="744" height="83" alt="image" src="https://github.com/user-attachments/assets/d14aaff8-5d62-4ce2-ac74-5dceb16c94cb" />
+
 
