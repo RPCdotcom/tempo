@@ -103,3 +103,17 @@ tempo consensus calculate-public-key --private-key ~/tempo/keys/validator.key
 
 <img width="716" height="56" alt="image" src="https://github.com/user-attachments/assets/67e404ae-1653-44dc-a09b-39a5d6b0c078" />
 
+## 6. Snapshot İndirelim ; 
+
+- Uzun Süreceği İçin Screen Açalım ; 
+
+```bash
+screen -S tempo
+```
+
+```bash
+mkdir -p ~/tempo/data
+tempo download --datadir ~/tempo/data
+```
+
+<img width="1217" height="141" alt="image" src="https://github.com/user-attachments/assets/c4225d78-c235-4cab-a29f-2555823b4ca2" />
