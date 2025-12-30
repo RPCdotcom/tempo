@@ -170,6 +170,39 @@ sudo journalctl -u tempo -f
 <img width="1598" height="597" alt="image" src="https://github.com/user-attachments/assets/5f1c5dea-8afc-4c4d-ac1c-d6536f09b308" />
 
 
+## Diğer Komutlar ;
+
+- Servis Durum Kontrol ; 
+
+```bash
+sudo systemctl status tempo
+ ```
+
+- Aktif Peer ( Bağlantı Sayısı )
+ 
+```bash
+cast rpc net_peerCount --rpc-url http://localhost:8545
+ ```
+
+ - Güncel Blok Numarası ; 
+
+```bash
+cast block-number --rpc-url http://localhost:8545
+cast block --rpc-url http://localhost:8545
+ ```
+
+ - Bunla bakmak için Foundry Tool'u kurmak lazım ama olmadan bakmak isterseniz ; 
+```bash
+ curl -s -X POST http://127.0.0.1:8545 \
+  -H "Content-Type: application/json" \
+  --data '{"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":1}'
+```
+
+- Loglarda Error ( Hata Arama )
+```bash
+sudo journalctl -u tempo -n 1000 | grep -i "error"
+```
+
 - Sevgiler.
 - RPCdot Ekibi.
 
