@@ -112,9 +112,7 @@ tempo node \
 ```
 
 - Servisli Hali ; 
-```bash
-nano /etc/systemd/system/tempo.service
-```
+
 ```bash
 sudo tee /etc/systemd/system/tempo.service > /dev/null <<EOF
 [Unit]
