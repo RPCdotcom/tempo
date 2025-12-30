@@ -167,7 +167,8 @@ systemctl start tempo
 sudo journalctl -u tempo -f
 ```
 
-<img width="956" height="248" alt="image" src="https://github.com/user-attachments/assets/c40b902e-57e9-4510-86fd-081f84ee5062" />
+<img width="1598" height="597" alt="image" src="https://github.com/user-attachments/assets/5f1c5dea-8afc-4c4d-ac1c-d6536f09b308" />
+
 
 - Sevgiler.
 - RPCdot Ekibi.
