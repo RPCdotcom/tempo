@@ -177,3 +177,96 @@ journalctl -u tempo -f
 ```
 
 <img width="956" height="248" alt="image" src="https://github.com/user-attachments/assets/c40b902e-57e9-4510-86fd-081f84ee5062" />
+
+ - LOG ANALİZİ (SATIR SATIR)
+
+ ```bash
+✅ OLUMLU KISIMLAR (ÇOK ÖNEMLİ)
+
+Bunlar validator’ın doğru şekilde ayağa kalktığını gösteriyor:
+
+INFO Starting consensus engine
+INFO using public ed25519 verifying key derived from provided private ed25519 signing key
+
+
+➡️ Signing key okunmuş ✅
+➡️ Consensus engine başlamış ✅
+
+INFO network started
+INFO Status connected_peers=1 latest_block=7685327
+
+
+➡️ P2P ağına bağlandı ✅
+➡️ Zincirin güncel bloğunu görüyor ✅
+
+Yani:
+
+❗ Node çalışıyor, senkron, ağda
+
+⚠️ GÖRDÜĞÜN ERROR NE?
+ERROR initialize_epoch_state: failed decoding the genesis.extra_data field as an initial DKG outcome
+
+🔑 BU NE ANLAMA GELİYOR?
+
+Bu hata:
+
+❌ Signing key hatası değil
+
+❌ Snapshot bozuk değil
+
+❌ Yanlış binary değil
+
+Bu hata şu anlama gelir:
+
+Sen genesis’te tanımlı aktif validator setinde değilsin
+
+Tempo’da:
+
+İlk DKG (Distributed Key Generation)
+
+Sadece whitelisted / active validator’lar için geçerli
+
+Senin node:
+
+Validator modunda çalışıyor ✅
+
+Ama henüz active set’e alınmamış ⏳
+
+Bu yüzden:
+
+Genesis’teki extra_data → senin için decode edilemiyor
+
+Ama node çalışmaya devam ediyor (loglarda görüyorsun)
+
+👉 Bu beklenen ve NORMAL bir durum.
+
+🟢 ÇOK KRİTİK NOKTA
+
+Bu hata şunlara engel DEĞİL:
+
+İşlem	Durum
+Sync	✅
+P2P	✅
+DKG gözlemleme	✅
+Active set’e girince çalışmak	✅
+⏳ ŞİMDİ NE OLACAK?
+
+Tempo ekibi:
+
+Validator identity’ni on-chain ekleyecek
+
+IP adresini whitelist edecek
+
+Bir sonraki DKG ceremony (≈48 saat) çalışacak
+
+Node:
+
+Signing share alacak
+
+Proposal üretmeye başlayacak
+
+⏱️ Genelde 48–72 saat
+```
+
+- Sevgiler.
+- RPCdot Ekibi.
