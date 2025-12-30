@@ -83,3 +83,23 @@ which tempo
 root@Ubuntu-2404-noble-amd64-base ~ # which tempo
 /usr/local/bin/tempo
 ```
+
+
+## 5. ED25519 Signing Key Oluşturalım ; 
+
+```bash
+mkdir -p ~/tempo/keys
+tempo consensus generate-private-key --output ~/tempo/keys/validator.key
+```
+- Örnek Sonuç ; 
+
+<img width="483" height="87" alt="image" src="https://github.com/user-attachments/assets/3e88e015-7ad0-41b1-a3b3-6c10cc400912" />
+
+- Key'i Doğrulayalım - Yukarı Resimdeki Üstü Çizili Olan Public Key İle Aşağıdaki Aynı Olmalı ; 
+
+```bash
+tempo consensus calculate-public-key --private-key ~/tempo/keys/validator.key
+```
+
+<img width="716" height="56" alt="image" src="https://github.com/user-attachments/assets/67e404ae-1653-44dc-a09b-39a5d6b0c078" />
+
