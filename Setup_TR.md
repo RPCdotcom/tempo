@@ -29,3 +29,24 @@ sudo apt update -y && sudo apt upgrade -y
 ```bash
 sudo apt install htop ca-certificates zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev tmux iptables curl nvme-cli git wget make jq libleveldb-dev build-essential pkg-config ncdu tar clang bsdmainutils lsb-release libssl-dev libreadline-dev libffi-dev jq gcc screen file nano btop unzip lz4 -y
 ```
+
+## 3. Tempo'yu İndirelim ; 
+
+```bash
+curl -L https://tempo.xyz/install | bash
+```
+
+<img width="543" height="502" alt="image" src="https://github.com/user-attachments/assets/4a0c2aa9-c3b0-4522-8557-a0b1545768a3" />
+
+- Source ; 
+```bash
+source /root/.bashrc
+```
+
+- Versiyon Kontrolü ; 
+
+```bash
+tempo --version
+```
+<img width="361" height="127" alt="image" src="https://github.com/user-attachments/assets/87a3351f-3f89-4bd8-ab2c-7e7c4857aa0a" />
+
