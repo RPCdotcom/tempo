@@ -122,3 +122,53 @@ tempo download --datadir ~/tempo/data
 
 - İndirilmiş Hali.
 
+## Başlatalım ; 
+
+- Normal Başlatma ( Screen gerek ve sürekli çalışmayabilir.)
+```bash
+tempo node --datadir /root/tempo/data \
+    --port 30303 \
+    --discovery.addr 0.0.0.0 \
+    --discovery.port 30303 \
+    --consensus.signing-key /root/tempo/keys/validator.key \
+    --consensus.fee-recipient <yandaki tırnakları kaldır buraya 0x ile baslayan fee'leri alacak cüzdan adresini koy> \
+```
+
+- Servisli Hali ; 
+```bash
+nano /etc/systemd/system/tempo.service
+```
+```bash
+[Unit]
+Description=Tempo Validator Node
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+User=root
+Type=simple
+ExecStart=/usr/local/bin/tempo node \
+  --datadir /root/tempo/data \
+  --port 30303 \
+  --discovery.addr 0.0.0.0 \
+  --discovery.port 30303 \
+  --consensus.signing-key /root/tempo/keys/validator.key \
+  --consensus.fee-recipient <yandaki tırnakları kaldır buraya 0x ile baslayan fee'leri alacak cüzdan adresini koy> \
+  --metrics 0.0.0.0:8002
+Restart=always
+RestartSec=10
+LimitNOFILE=1048576
+
+[Install]
+WantedBy=multi-user.target
+```
+
+- CTRL X sonrasında CTRL Y ve ENTER. Kayıt Edilecek.
+```bash
+systemctl daemon-reexec
+systemctl daemon-reload
+systemctl enable tempo
+systemctl start tempo
+```
+
+<img width="956" height="248" alt="image" src="https://github.com/user-attachments/assets/c40b902e-57e9-4510-86fd-081f84ee5062" />
