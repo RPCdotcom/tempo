@@ -105,12 +105,10 @@ tempo download --datadir ~/tempo/data
 
 - Normal Başlatma ( Screen gerek ve sürekli çalışmayabilir.)
 ```bash
-tempo node --datadir /root/tempo/data \
-    --port 30303 \
-    --discovery.addr 0.0.0.0 \
-    --discovery.port 30303 \
-    --consensus.signing-key /root/tempo/keys/validator.key \
-    --consensus.fee-recipient <yandaki tırnakları kaldır buraya 0x ile baslayan fee'leri alacak cüzdan adresini koy> \
+tempo node \
+  --follow \
+  --http --http.port 8545 \
+  --http.api eth,net,web3,txpool,trace
 ```
 
 - Servisli Hali ; 
