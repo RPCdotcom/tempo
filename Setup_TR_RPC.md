@@ -118,28 +118,40 @@ tempo node --datadir /root/tempo/data \
 nano /etc/systemd/system/tempo.service
 ```
 ```bash
+sudo tee /etc/systemd/system/tempo.service > /dev/null <<EOF
 [Unit]
-Description=Tempo Validator Node
-After=network-online.target
-Wants=network-online.target
-
+Description=Tempo RPC Node
+After=network.target
+Wants=network.target
+ 
 [Service]
-User=root
 Type=simple
-ExecStart=/usr/local/bin/tempo node \
-  --datadir /root/tempo/data \
-  --port 30303 \
-  --discovery.addr 0.0.0.0 \
-  --discovery.port 30303 \
-  --consensus.signing-key /root/tempo/keys/validator.key \
-  --consensus.fee-recipient <yandaki tırnakları kaldır buraya 0x ile baslayan fee'leri alacak cüzdan adresini koy> \
-  --metrics 0.0.0.0:8002
+User=$USER
+Group=$USER
+Environment=RUST_LOG=info
+WorkingDirectory=$HOME/tempo
+ExecStart=/usr/local/bin/tempo node \\
+  --datadir /root/tempo/data \\
+  --follow \\
+  --port 30303 \\
+  --discovery.addr 0.0.0.0 \\
+  --discovery.port 30303 \\
+  --http \\
+  --http.addr 0.0.0.0 \\
+  --http.port 8545 \\
+  --http.api eth,net,web3,txpool,trace \\
+  --metrics 9000 \\
+ 
 Restart=always
 RestartSec=10
-LimitNOFILE=1048576
-
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=tempo
+LimitNOFILE=infinity
+ 
 [Install]
 WantedBy=multi-user.target
+EOF
 ```
 
 - CTRL X sonrasında CTRL Y ve ENTER. Kayıt Edilecek.
@@ -152,7 +164,7 @@ systemctl start tempo
 
 - Sonrasında Loglar İçin ; 
 ```bash
-journalctl -u tempo -f
+sudo journalctl -u tempo -f
 ```
 
 <img width="956" height="248" alt="image" src="https://github.com/user-attachments/assets/c40b902e-57e9-4510-86fd-081f84ee5062" />
