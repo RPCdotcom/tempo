@@ -16,6 +16,9 @@
 - Web : https://rpcdot.com
 - X : https://x.com/rpcdot
 
+- ⚠️ Önemli:
+Tempo validator’ları şu an permissioned. Yani node’u çalıştırabilirsin ama aktif validator olabilmen için Tempo ekibinin senin public key + IP’yi whitelist etmesi gerekir. Aksi halde node senkron olur ama blok üretmez.
+
 ## 1. Server Güncelleme : 
 
 ```bash
