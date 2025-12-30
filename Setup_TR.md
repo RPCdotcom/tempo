@@ -8,3 +8,21 @@
 | **Disk**      | 100GB NVME SSD| 1TB+ NVME GB SDD                   |
 | **Ağ Hızı**      | 100 Mbps | 1 GBPS |
 | **UBUNTU**      | UBUNTU 22.04 | + |
+
+
+- Web : https://tempo.xyz/
+- X : https://x.com/tempo
+
+- Web : https://rpcdot.com
+- X : https://x.com/rpcdot
+
+## 1. Server Güncelleme : 
+
+```bash
+sudo apt update -y && sudo apt upgrade -y
+```
+## 2. Topluca Paketleri İndirme :
+
+```bash
+sudo apt install htop ca-certificates zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev tmux iptables curl nvme-cli git wget make jq libleveldb-dev build-essential pkg-config ncdu tar clang bsdmainutils lsb-release libssl-dev libreadline-dev libffi-dev jq gcc screen file nano btop unzip lz4 -y
+```
