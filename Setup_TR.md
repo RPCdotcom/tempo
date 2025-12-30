@@ -67,3 +67,19 @@ cargo install --git https://github.com/tempoxyz/tempo.git tempo --root /usr/loca
 <img width="744" height="83" alt="image" src="https://github.com/user-attachments/assets/d14aaff8-5d62-4ce2-ac74-5dceb16c94cb" />
 
 
+- Doğru İnmişmi Doğrulayalım ; 
+
+```bash
+which tempo
+```
+
+- Örnek ; 
+
+<img width="653" height="75" alt="image" src="https://github.com/user-attachments/assets/58eae681-c6de-4789-bfae-5b80db190b07" />
+
+- Kod değildir. Örnek ; 
+
+```bash
+root@Ubuntu-2404-noble-amd64-base ~ # which tempo
+/usr/local/bin/tempo
+```
