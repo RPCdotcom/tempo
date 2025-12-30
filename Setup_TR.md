@@ -117,3 +117,8 @@ tempo download --datadir ~/tempo/data
 ```
 
 <img width="1217" height="141" alt="image" src="https://github.com/user-attachments/assets/c4225d78-c235-4cab-a29f-2555823b4ca2" />
+
+<img width="1233" height="164" alt="image" src="https://github.com/user-attachments/assets/01e4bf07-7563-4e17-87ed-eae9053cd743" />
+
+- İndirilmiş Hali.
+
