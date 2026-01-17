@@ -8,7 +8,7 @@
 | **RAM**          | 16+  | 32++ GB                   |
 | **Disk**      | 250GB NVME SSD| 500+ NVME GB SDD                   |
 | **Ağ Hızı**      | 500 Mbps | 1 GBPS |
-| **UBUNTU**      | UBUNTU 22.04 | + |
+| **UBUNTU**      | UBUNTU 24.04 | + |
 
 
 - Web : https://tempo.xyz/
